@@ -25,7 +25,11 @@ int main() {
 <p>
 Compiling is the process of converting source code into a machine readable format called machine code.
 Machine code used to be written by hand, but that was a big task and was slow, programming languages were
-created to make this part easier.
+created to make this part easier.<br>
+storing a variable in machine code:
+<pre>
+    c7 45 fc 05 00 00 00
+</pre>
 </p>
 <p>
 Assembly was the first version of more human readable code. Today, assembly is considered
@@ -33,11 +37,20 @@ very old-school and is not commonly used outside of very specific use cases.<br>
 Assembly is very close to the machine code that a CPU reads, but it is not exactly 1:1. Assembly is also different across CPUs.
 However, back when it was created it was very useful.<br>
 Assembly programs are generally not <i>compiled</i> but are <i>assembled</i> using an assembler.
-Assembly is also used as an intermediate stage when compiling higher level languages like C.
+Assembly is also used as an intermediate stage when compiling higher level languages like C.<br>
+storing a variable in assembly:
+<pre>
+    movq $5, -4(%rbp)
+</pre>
 </p>
 <p>
 The level after assembly is a compiled language like C. C is compiled into assembly, which
-is then assembled down to machine code. This is because converting C to assembly is much easier than converting C directly to machine code.
+is then assembled down to machine code. This is because converting C to assembly is much
+easier than converting C directly to machine code.<br>
+storing a variable in C:
+<pre>
+    int x = 5;
+</pre>
 </p>
 <h3>How to compile C</h3>
 The steps are different on different operating systems. AS OF NOW THIS TUTORIAL WILL ONLY COVER UNIX.
