@@ -60,12 +60,33 @@ The first step is to install a compiler if it is not already installed.
 This process can vary wildly across every operating system so you're going to have to look this one up.<br>
 A good search query should be "how to install a c compiler on X" where X is your operating system.<br>
 
-The most popular compiler is known as gcc and can be installed on virtually any operating system.
+The most popular compiler is gcc and can be installed on virtually any operating system.
 
 Generally though, you should check if cc is available on the system. If not, you probably don't already have a compiler.<br>
 
 CC is not a compiler in itself, but it is usually just a link to a compiler. That compiler is often gcc,
 but that will depend on your operating system and if you've installed any other compilers.
+</p>
+<p>
+You will also need somewhere to write your code. Every OS will come with a text editor. Some popular text editors are:<br>
+<ul>
+    <li>vi/vim</li>
+    <li>nano</li>
+    <li>notepad++</li>
+    <li>Visual Studio Code</li>
+    <li>Atom</li>
+    <li>Sublime Text</li>
+</ul>
+</p>
+<p>
+Another option is to install an IDE (integrated development environment).
+This is a program that you can write your code in. It will also automate the process of compiling and running your code,
+as well as giving you helpful tools like a debugger. This tutorial will not cover the installation of an IDE, but popular options are:<br>
+<ul>
+    <li>Visual Studio (Windows and MacOS)</li>
+    <li>Code::Blocks (Windows, Linux, MacOS)</li>
+    <li>Codelite (Windows, Linux, MacOS)</li>
+</ul>
 </p>
 
 <h4>Step 2</h4>
@@ -102,7 +123,7 @@ int main() {
 <br>
 
 1. <code>#include &lt;stdio.h&gt;</code><br>
-This is a preprocessor statement, more about the preprocessor <a href="preprocessor.html">here</a>.
+This is a <a href="preprocessor.html">preprocessor</a> statement.
 Specifically, this is an include statement. This will allow you to use functionality from libraries.
 <code>stdio.h</code> contains useful functions and structures for writing to
 and reading from standard input and output, AKA the terminal.<br>
