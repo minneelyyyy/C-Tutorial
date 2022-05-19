@@ -178,6 +178,11 @@ and pointers are represented with hexadecimal, which is commonly used to represe
 Hexadecimal is a number system just like decimal. Where decimal is base 10 (aka it uses 10 digits),
 hexadecimal is base 16 (16 digits, 0-9,A-F), and 2 hexadecimal digits can represent a single byte.
 </p>
+<p>
+Note: These numbers are based on gcc running on my Linux system. These sizes are not
+constant, and can vary across compilers. For example in Windows, <code>long</code> is 4 bytes.<br>
+Other than that, these numbers tend to remain the same.
+</p>
 
 <h3>Unsigned</h3>
 <p>
@@ -201,22 +206,22 @@ an error or just convert it.
         <th>Max Value</th>
     </tr>
     <tr>
-        <th>char</th>
+        <th>unsigned char</th>
         <th>1 byte</th>
         <th>255</th>
     </tr>
     <tr>
-        <th>short</th>
+        <th>unsigned short</th>
         <th>2 bytes</th>
         <th>65535</th>
     </tr>
     <tr>
-        <th>int</th>
+        <th>unsigned int</th>
         <th>4 bytes</th>
         <th>4294967295</th>
     </tr>
     <tr>
-        <th>long</th>
+        <th>unsigned long</th>
         <th>8 bytes</th>
         <th>18446744073709551615</th>
     </tr>
