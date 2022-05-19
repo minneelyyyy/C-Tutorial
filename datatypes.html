@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" lang="en">
+</head>
+<body>
+<h1>Data Types</h1>
+
+<p>
+Data is a very important concept in the world of programming.
+The whole point of programming is manipulating data. C offers us a method
+of storing data called a variable.
+</p>
+
+<h3>Variables</h3>
+<p>
+A variable is a way of storing named data. For example: favorite_number = 7.<br>
+This is a variable named "favorite_number" and it stores the number 7.
+</p>
+
+<p>
+A data type is used to define what data a variable stores. This is used so that
+programmers, as well as the language itself, knows what to do with and use it for.
+</p>
+
+<p>
+To define a variable in C, you will need to do one of:
+<pre>
+    data-type variable-name = value;
+    data-type variable-name;
+</pre>
+The first will create a variable named <code>variable-name</code> with the type <code>data-type</code>,
+and assign it the value of <code>value</code>.<br>
+The second will will create a variable named <code>variable-name</code> with the type <code>data-type</code>,
+but will not assign it any value.
+</p>
+
+<h3>What data types are there?</h3>
+<p>
+There are 3 main types of data in C, <code>integers</code>, <code>floats</code>, and <code>pointers</code>.
+</p>
+
+<h4>Integers</h4>
+<p>
+You have probably heard this term in math class. An integer is any number without a decimal point, like 15 or -12.<br>
+To declare an integer, you can use the <code>int</code> keyword.
+<pre>
+int x = 5;
+</pre>
+</p>
+
+<h4>Floats</h4>
+<p>
+A float is a number that can have a decimal such as 5.5 or -12.2.<br>
+To declare a float, you can use the <code>float</code> keyword.
+<pre>
+float y = 5.5;
+</pre>
+</p>
+
+<h4>Pointers</h4>
+<p>
+A pointer is a special data type that is used to store a memory address.
+These are too complicated to explain right now, so I will break up their main uses
+into multiple sections (see <a href="strings.html">strings</a> and <a href="pointers.html">pointers</a>).<br>
+
+Pointers are most often used to store a string, which is some data that stores letters.
+A char (character) pointer can be used to reference a string.<br>
+
+A pointer can point to any data type you want, for a string its most useful to use the <code>char</code> type.<br>
+To declare a char pointer, you can use the <code>char</code> keyword, with an asterisk before the variable name.
+<pre>
+char *str = "hello";
+</pre>
+</p>
+
+<h3>Sizes</h3>
+<p>
+Ints and floats have multiple sizes, and you use different keywords to give them a specified size.<br>
+<br>
+What do I mean by size? By that I mean how many bytes in memory that a data type takes up.
+Bytes are individual sections of bits and can represent different types of data, however
+they have a very limited amount of information they can store<br>
+Multiple bytes can be used to allow for storage of much larger data sets. Check out the table below.
+</p>
+
+<h4>A table of sizes</h4>
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Size</th>
+        <th>Range / Precision</th>
+    </tr>
+    <tr>
+        <th>char</th>
+        <th>1 byte</th>
+        <th>-128 to 127</th>
+    </tr>
+    <tr>
+        <th>short</th>
+        <th>2 bytes</th>
+        <th>-32766 to 32767</th>
+    </tr>
+    <tr>
+        <th>int</th>
+        <th>4 bytes</th>
+        <th>-2147483648 to 2147483647</th>
+    </tr>
+    <tr>
+        <th>long</th>
+        <th>8 bytes</th>
+        <th>-9223372036854775808 to 9223372036854775807</th>
+    </tr>
+    <tr>
+        <th>float</th>
+        <th>4 bytes</th>
+        <th>7 digits</th>
+    </tr>
+    <tr>
+        <th>double</th>
+        <th>8 bytes</th>
+        <th>15 digits</th>
+    </tr>
+    <tr>
+        <th>any pointer</th>
+        <th>8 bytes</th>
+        <th>0x0 to 0xFFFFFFFFFFFFFFFF</th>
+    </tr>
+</table>
+
+<p>
+The integers have a fixed max and min value, the floats are given a precision to a number of digits,
+and pointers are represented with hexadecimal, which is commonly used to represent pointer values or byte values.<br>
+Hexadecimal is a number system just like decimal. Where decimal is base 10 (aka it uses 10 digits),
+hexadecimal is base 16 (16 digits, 0-9,A-F), and 2 hexadecimal digits can represent a single byte.
+</p>
+
+<h3>Unsigned</h3>
+<p>
+Any of the integer types can have <code>unsigned</code> added to them.<br>
+Unsigned variables are like ints but they can only represent positive numbers, aka 0 to max.
+This is useful for times when you don't want or expect a number to be negative.<br>
+To create an unsigned int, use this:
+
+<pre>
+unsigned int x = 5;
+</pre>
+
+If you attempt to set an unsigned variable to a negative number, it can either give you
+an error or just convert it.
+</p>
+<h4>A table of unsigned integers</h4>
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Size</th>
+        <th>Max Value</th>
+    </tr>
+    <tr>
+        <th>char</th>
+        <th>1 byte</th>
+        <th>255</th>
+    </tr>
+    <tr>
+        <th>short</th>
+        <th>2 bytes</th>
+        <th>65535</th>
+    </tr>
+    <tr>
+        <th>int</th>
+        <th>4 bytes</th>
+        <th>4294967295</th>
+    </tr>
+    <tr>
+        <th>long</th>
+        <th>8 bytes</th>
+        <th>18446744073709551615</th>
+    </tr>
+</table>
+
+<h3>Printf Formats</h3>
+<p>
+In C, it's not common for a function to be allowed to take just any type
+and handle it correctly. So there is no <code>print(5)</code> and then <code>print(12.2)</code>.<br>
+In C, to print a variable that isn't a string the most common approach is to use printf.<br>
+The f in printf stands for format, and formatting is the most powerful part of printf.
+To print an integer, all you have to do is:
+
+<pre>
+int x = 5;
+printf("%d\n", x);
+</pre>
+
+<code>printf</code> takes a format string, and format specifiers all start with a %, then some characters
+to define what the format should look like. The format specifiers are optional, as we saw in our hello world program.
+You will provide things like size, type, right-aligned, 0 padding, etc.<br>
+I suggest you look up how to use printf in more detail.
+</p>
+
+<h4>Format Specifiers</h4>
+<table>
+    <tr>
+        <th>%d</th>
+        <th>Integer</th>
+    </tr>
+    <tr>
+        <th>%u</th>
+        <th>Unsigned Integer</th>
+    </tr>
+    <tr>
+        <th>%f</th>
+        <th>Float</th>
+    </tr>
+    <tr>
+        <th>%s</th>
+        <th>String</th>
+    </tr>
+    <tr>
+        <th>%c</th>
+        <th>Character</th>
+    </tr>
+    <tr>
+        <th>%p</th>
+        <th>Pointer</th>
+    </tr>
+</table>
+
+<a href="hello-world.html">Previous: Hello World</a>
+</body>
+</html>
