@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" lang="en">
+</head>
+<body>
+<h1>Hello World</h1>
+
+<p>
+A hello world program is a very common first step in learning a programming language.
+The goal of a hello world program is simple: print hello world.
+</p>
+
+<pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, world!\n");
+    return 0;
+}
+</pre>
+
+<h3>Compiling</h3>
+<p>
+Compiling is the process of converting source code into a machine readable format called machine code.
+Machine code used to be written by hand, but that was a big task and was slow, programming languages were
+created to make this part easier.
+</p>
+<p>
+Assembly was the first version of more human readable code. Today, assembly is considered
+very old-school and is not commonly used outside of very specific use cases.<br>
+Assembly is very close to the machine code that a CPU reads, but it is not exactly 1:1. Assembly is also different across CPUs.
+However, back when it was created it was very useful.<br>
+Assembly programs are generally not <i>compiled</i> but are <i>assembled</i> using an assembler.
+Assembly is also used as an intermediate stage when compiling higher level languages like C.
+</p>
+<p>
+The level after assembly is a compiled language like C. C is compiled into assembly, which
+is then assembled down to machine code. This is because converting C to assembly is much easier than converting C directly to machine code.
+</p>
+<h3>How to compile C</h3>
+The steps are different on different operating systems. AS OF NOW THIS TUTORIAL WILL ONLY COVER UNIX.
+
+<h4>Step 1</h4>
+<p>
+The first step is to install a compiler if it is not already installed.
+This process can vary wildly across every operating system so you're going to have to look this one up.<br>
+A good search query should be "how to install a c compiler on X" where X is your operating system.<br>
+
+The most popular compiler is known as gcc and can be installed on virtually any operating system.
+
+Generally though, you should check if cc is available on the system. If not, you probably don't already have a compiler.<br>
+
+CC is not a compiler in itself, but it is usually just a link to a compiler. That compiler is often gcc,
+but that will depend on your operating system and if you've installed any other compilers.
+</p>
+
+<h4>Step 2</h4>
+<p>
+The second step is to put your code into a file to store it. You will want to put the code in a file ending in <code>.c</code>.<br>
+Copy the hello world program above and paste it into a file called <code>hello.c</code>.
+</p>
+
+<h4>Step 3</h4>
+<p>
+The third and final step is to compile the program. You will need to run the compiler, providing it with the source files you wish to compile.
+<pre>$ cc hello.c</pre>
+After running this, you should have a file called <code>a.out</code>, to run it, do
+<pre>
+$ ./a.out
+Hello, world!
+</pre>
+</p>
+<a href="intro.html">Previous: Intro</a>
+</body>
+</html>
