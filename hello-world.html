@@ -77,32 +77,48 @@ Hello, world!
 <p>
 You may be wondering what the code is actually doing. We will cover every line of code in this section.
 None of this information will go too in depth, parts that mention a specific feature will link to their sections.<br>
+
+<h5>A reminder of what the program looked like</h5>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, world!\n");
+    return 0;
+}
+</pre>
 <br>
+
 1. <code>#include &lt;stdio.h&gt;</code><br>
 This is a preprocessor statement, more about the preprocessor <a href="preprocessor.html">here</a>.
 Specifically, this is an include statement. This will allow you to use functionality from libraries.
 <code>stdio.h</code> contains useful functions and structures for writing to
 and reading from standard input and output, AKA the terminal.<br>
 <br>
+
 2. A blank line. C ignores this line but it is used to make the code more readable.<br>
 <br>
+
 3. <code>int main() {</code><br>
 This is the start of a function, we will discuss more about functions <a href="functions.html">later</a>.
 The <code>main</code> function is special because it is expected for every program, it is considered the
 entry point of the program, and is where code execution begins for the program. It can also take <a href="cmdargs.html">arguments</a>.
 It also returns an <a href="datatypes.html">int</a>, which is used as the <a href="retcodes.html">exit code</a> of the program.<br>
 <br>
+
 4. <code>printf("Hello, World!\n");</code><br>
 This is a function call. We are calling the function <code>printf</code> which is used to print information to the terminal.
 Take special notice of the <code>\n</code>, which is known as a newline. The newline will make the terminal go to the beginning of the next line.<br>
 <br>
+
 5. <code>return 0;</code><br>
 This is a return statement. It will end execution of the function and return the value provided to it.
 We talk more about return values in the <a href="functions.html">functions</a> section.<br>
 <code>main</code> is special, because what it returns is also the <a href="retcodes.html">exit code</a> of the program.
 On most operating systems, 0 is understood to mean OK, while any other value means there was an error.<br>
-Note: in C99 and beyond, this line is not necessary, and it will be implied to return 0.<br>
+Note: in C99 and beyond, this line is not necessary, and it will be implied to return 0. This only applies to the <code>main</code> function.<br>
 <br>
+
 6. <code>}</code><br>
 This simply closes the function body.
 </p>
