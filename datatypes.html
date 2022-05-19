@@ -15,7 +15,7 @@ of storing data called a variable.
 
 <h3>Variables</h3>
 <p>
-A variable is a way of storing named data. For example: favorite_number = 7.<br>
+A variable is a way of storing named data. For example: <code>favorite_number = 7</code>.<br>
 This is a variable named "favorite_number" and it stores the number 7.
 </p>
 
@@ -33,7 +33,24 @@ To define a variable in C, you will need to do one of:
 The first will create a variable named <code>variable-name</code> with the type <code>data-type</code>,
 and assign it the value of <code>value</code>.<br>
 The second will will create a variable named <code>variable-name</code> with the type <code>data-type</code>,
-but will not assign it any value.
+but will not assign it any value.<br>
+
+Tip: You can chain declarations like this, and you can set values for some while not setting values for others.
+<pre>
+int x, y = 4, z;
+</pre>
+In this code, we create x, y, and z. Only y will be initialized with the value 4.
+</p>
+
+<p>
+If you would like to set a variable after it's been created, use the <code>=</code> operator.
+<pre>
+/* x is created, but no value is assigned */
+int x;
+
+/* you can set x's value later */
+x = 5;
+</pre>
 </p>
 
 <h3>What data types are there?</h3>
