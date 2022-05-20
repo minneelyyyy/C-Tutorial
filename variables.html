@@ -18,48 +18,59 @@ of storing data called a variable.
 </p>
 
 <p>
-A variable is a way of storing named data. For example: <code>favorite_number = 7</code>.<br>
+A variable is a way of storing named data. For example: <code>favorite_number = 7</code>.
 This is a variable named "favorite_number" and it stores the number 7.
 </p>
 
 <h4>Creating a variable in C</h4>
 
 <p>
-To define a variable in C, you will need to do one of:
+To create a variable in C, you will need to do one of:
+</p>
+
 <pre>
     data-type variable-name = value;
     data-type variable-name;
 </pre>
+
+
+<p>
 The first will create a variable named <code>variable-name</code> with the type <code>data-type</code>,
 and assign it the value of <code>value</code>.<br>
 The second will will create a variable named <code>variable-name</code> with the type <code>data-type</code>,
-but will not assign it any value.
+but will not assign it any value.<br>
+You can also define multiple variables on the same line.
 </p>
 
-<p>
-You can also chain declarations like this, and you can set values for some while not setting values for others.
+<i>example of defining some variables:</i>
 <pre>
-int x, y = 4, z;
+    int x = 5;
+    int y;
 </pre>
-In this code, we create x, y, and z. Only y will be initialized with the value 4.
-</p>
+
+<i>example of defining multiple variables in one line:</i>
+<pre>
+    int x, y = 4, z;
+</pre>
 
 <p>
 If you would like to set a variable after it's been created, use the <code>=</code> operator.
-<pre>
-/* x is created, but no value is assigned */
-int x;
-
-/* you can set x's value later */
-x = 5;
-</pre>
 </p>
+
+<pre>
+    /* x is created, but no value is assigned */
+    int x;
+
+    /* you can set x's value later */
+    x = 5;
+</pre>
 
 <h4>What happens if you don't set a variable?</h4>
 <p>
 If a variable can only store the data type it is given, what does it store
 when you don't give it a value? Well, let's find out.<br>
 Compile and run this program to see what happens.
+</p>
 
 <pre>
 #include &lt;stdio.h&gt;
@@ -69,67 +80,68 @@ int main() {
     printf("%d\n", x);
 }
 </pre>
-</p>
 
 <p>
 If you run this code, you might notice that it is 0, or it might be any other random number.
 The truth is, I can't predict what it will be. This is called <code>undefined behavior</code> in C.
 What that means is it totally depends on your compiler.<br>
 It will most commonly be what data was already at the memory it is given.
-Usually an unpredictable value.
 </p>
 
 <h3 id="datatypes">Data Types</h3>
 <p>
 A data type is used to define what data a variable stores. This is used so that
-programmers, as well as the language itself, knows what to do with and use it for.
-</p>
-
-<p>
+programmers, as well as the language itself, knows what to do with and use it for.<br>
 There are 3 main types of data in C, <code>integers</code>, <code>floats</code>, and <code>pointers</code>.
 </p>
 
 <h4>Integers</h4>
 <p>
 You have probably heard this term in math class. An integer is any number without a decimal point, like 15 or -12.<br>
-To declare an integer, you can use the <code>int</code> keyword.
-<pre>
-int x = 5;
-</pre>
+To declare an integer, you use the <code>int</code> keyword.
 </p>
+
+<i>example of creating an integer:</i>
+<pre>
+    int x = 5;
+</pre>
 
 <h4>Floats</h4>
 <p>
 A float is a number that can have a decimal such as 5.5 or -12.2.<br>
-To declare a float, you can use the <code>float</code> keyword.
-<pre>
-float y = 5.5;
-</pre>
+To declare a float, you use the <code>float</code> keyword.
 </p>
+
+<i>example of creating a float:</i>
+<pre>
+    float y = 5.5;
+</pre>
 
 <h4>Pointers</h4>
 <p>
 A pointer is a special data type that is used to store a memory address.
-These are too complicated to explain right now, so I will break up their main uses
-into multiple sections (see <a href="strings.html">strings</a> and <a href="pointers.html">pointers</a>).<br>
+</p>
 
+<p>
 Pointers are most often used to store a string, which is some data that stores letters.
 A char (character) pointer can be used to reference a string.<br>
-
-A pointer can point to any data type you want, for a string its most useful to use the <code>char</code> type.<br>
 To declare a char pointer, you can use the <code>char</code> keyword, with an asterisk before the variable name.
-<pre>
-char *str = "hello";
-</pre>
 </p>
+
+<i>example of creating a char pointer:</i>
+<pre>
+    char *str = "hello";
+</pre>
 
 <h3>Sizes</h3>
 <p>
 Ints and floats have multiple sizes, and you use different keywords to give them a specified size.<br>
-<br>
+</p>
+
+<p>
 What do I mean by size? By that I mean how many bytes in memory that a data type takes up.
 Bytes are individual sections of bits and can represent different types of data, however
-they have a very limited amount of information they can store<br>
+they have a very limited amount of information they can store.<br>
 Multiple bytes can be used to allow for storage of much larger data sets. Check out the table below.
 </p>
 
@@ -183,6 +195,7 @@ and pointers are represented with hexadecimal, which is commonly used to represe
 Hexadecimal is a number system just like decimal. Where decimal is base 10 (uses 10 digits),
 hexadecimal is base 16 (16 digits, 0-9,A-F), and 2 hexadecimal digits can represent a single byte.
 </p>
+
 <p>
 Note: These numbers are based on gcc running on my Linux system. These sizes are not
 constant, and can vary across compilers. For example in Windows, <code>long</code> is 4 bytes.<br>
@@ -195,11 +208,13 @@ Any of the integer types can have <code>unsigned</code> added to them.<br>
 Unsigned variables are like ints but they can only represent positive numbers, aka 0 to max.
 This is useful for times when you don't want or expect a number to be negative.<br>
 To create an unsigned int, use this:
+</p>
 
 <pre>
-unsigned int x = 5;
+    unsigned int x = 5;
 </pre>
 
+<p>
 If you attempt to set an unsigned variable to a negative number, it can either give you
 an error or just convert it.
 </p>
@@ -239,12 +254,14 @@ and handle it correctly. So there is no <code>print(5)</code> and then <code>pri
 To print a variable that isn't a string, the most common approach is to use printf.<br>
 The f in printf stands for format, and formatting is the most powerful part of printf.<br>
 To print an integer, all you have to do is:
+</p>
 
 <pre>
-int x = 5;
-printf("%d\n", x);
+    int x = 5;
+    printf("%d\n", x);
 </pre>
 
+<p>
 <code>printf</code> takes a format string, and format specifiers all start with a %, then some characters
 to define what the format should look like. The format specifiers are optional, as we saw in our hello world program.
 You will provide things like size, type, right-aligned, 0 padding, etc.<br>
