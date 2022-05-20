@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8" lang="en">
+<meta charset="UTF-8">
+<title>C Tutorial: Hello World</title>
 </head>
 <body>
-<h1 id="hw">Hello World</h1>
+<h1 id="hello-world">Hello World</h1>
 
 <p>
 A hello world program is a very common first step in learning a programming language.
@@ -25,50 +26,61 @@ int main() {
 <p>
 Compiling is the process of converting source code into a machine readable format called machine code.
 Machine code used to be written by hand, but that was a big task and was slow; programming languages were
-created to make this part easier.<br>
-storing a variable in x86-64 machine code:
+created to make this part easier.
+</p>
+
+<i>storing a variable in x86-64 machine code:</i>
 <pre>
     c7 45 fc 05 00 00 00
 </pre>
-</p>
+
 <p>
 Assembly was the first version of more human readable code. When it was created it made programming a lot easier; today, assembly is considered
-very old-school and is not commonly used outside of very specific use cases.<br>
+very old-school and is not commonly used outside of very specific use cases.
 Assembly is very close to the machine code that a CPU reads, but it is not exactly 1:1. Assembly is also different across CPUs.
 Assembly programs are generally not <i>compiled</i> but are <i>assembled</i> using an assembler.
-Assembly is also used as an intermediate stage when compiling higher level languages like C.<br>
-storing a variable in x86-64 assembly:
+Assembly is also used as an intermediate stage when compiling higher level languages like C.
+</p>
+
+<i>storing a variable in x86-64 assembly:</i>
 <pre>
     movq $5, -4(%rbp)
 </pre>
-</p>
+
 <p>
 The level after assembly is a compiled language like C. C is compiled into assembly, which
 is then assembled down to machine code. This is because converting C to assembly is much
-easier than converting C directly to machine code.<br>
-storing a variable in C:
+easier than converting C directly to machine code.
+</p>
+
+<i>storing a variable in C:</i>
 <pre>
     int x = 5;
 </pre>
-</p>
-<h3 id="howtocompile">How to Compile C</h3>
+
+<h3 id="how-to-compile-c">How to Compile C</h3>
+<p>
 The steps are different on different operating systems. AS OF NOW THIS TUTORIAL WILL ONLY COVER UNIX.
+</p>
 
 <h4>Step 1</h4>
 <p>
 The first step is to install a compiler if it is not already installed.
-This process can vary wildly across every operating system so you're going to have to look this one up.<br>
-A good search query should be "how to install a c compiler on X" where X is your operating system.<br>
+This process can vary wildly across every operating system so you're going to have to look this one up;
+a good search query should be "how to install a c compiler on X" where X is your operating system.
+</p>
 
+<p>
 The most popular compiler is gcc and can be installed on virtually any operating system.
-
-Generally though, you should check if cc is available on the system. If not, you probably don't already have a compiler.<br>
-
+Generally though, you should check if cc is available on the system. If not, you probably don't already have a compiler.
 CC is not a compiler in itself, but it is usually just a link to a compiler. That compiler is often gcc,
 but that will depend on your operating system and if you've installed any other compilers.
 </p>
+
 <p>
-You will also need somewhere to write your code. Every OS will come with a text editor. Some popular text editors are:<br>
+You will also need somewhere to write your code. Every OS will come with a text editor. Here are some popular ones.
+</p>
+
 <ul>
     <li>vi/vim</li>
     <li>nano</li>
@@ -77,17 +89,19 @@ You will also need somewhere to write your code. Every OS will come with a text 
     <li>Atom</li>
     <li>Sublime Text</li>
 </ul>
-</p>
+
 <p>
 Another option is to install an IDE (integrated development environment).
 This is a program that you can write your code in. It will also automate the process of compiling and running your code,
-as well as giving you helpful tools like a debugger. This tutorial will not cover the installation of an IDE, but popular options are:<br>
+as well as giving you helpful tools like a debugger.
+This tutorial will not cover the installation of an IDE, but here's some popular ones.
+</p>
+
 <ul>
     <li>Visual Studio (Windows and MacOS)</li>
     <li>Code::Blocks (Windows, Linux, MacOS)</li>
     <li>Codelite (Windows, Linux, MacOS)</li>
 </ul>
-</p>
 
 <h4>Step 2</h4>
 <p>
@@ -97,21 +111,28 @@ Copy the hello world program above and paste it into a file called <code>hello.c
 
 <h4>Step 3</h4>
 <p>
-The third and final step is to compile the program. You will need to run the compiler, providing it with the source files you wish to compile.
+The third and final step is to compile the program.
+You will need to run the compiler, providing it with the source files you wish to compile.
+</p>
+
 <pre>$ cc hello.c</pre>
+
+<p>
 After running this, you should have a file called <code>a.out</code>, to run it, do
+</p>
+
 <pre>
 $ ./a.out
 Hello, world!
 </pre>
-</p>
 
-<h3 id="explain">Explaining the Program</h3>
+<h3 id="explaining-the-program">Explaining the Program</h3>
 <p>
 You may be wondering what the code is actually doing. We will cover every line of code in this section.
-None of this information will go too in depth, parts that mention a specific feature will link to their sections.<br>
+None of this information will go too in depth, parts that mention a specific feature will link to their sections.
+</p>
 
-<h4>A reminder of what the program looked like</h4>
+<i>A reminder of what a hello world looks like:</i>
 <pre>
 #include &lt;stdio.h&gt;
 
@@ -120,7 +141,6 @@ int main() {
     return 0;
 }
 </pre>
-<br>
 
 1. <code>#include &lt;stdio.h&gt;</code><br>
 This is a <a href="preprocessor.html">preprocessor</a> statement.
@@ -153,8 +173,7 @@ Note: in C99 and beyond, this line is not necessary, and it will be implied to r
 <br>
 
 6. <code>}</code><br>
-This simply closes the function body.
-</p>
+This simply closes the function body.<br><br>
 
 <a href="intro.html">Previous: Intro</a>
 <a href="index.html">Index</a>
