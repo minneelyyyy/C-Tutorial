@@ -1,0 +1,21 @@
+
+table {
+    border: 1px solid;
+    padding: 0px;
+    border-spacing: 0px;
+}
+
+th {
+    border: 1px solid;
+    margin: 0px;
+    padding: 2px;
+}
+
+tr {
+    margin: 0px;
+    padding: 2px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
