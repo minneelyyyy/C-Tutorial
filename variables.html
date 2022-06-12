@@ -25,21 +25,17 @@ This is a variable named "favorite_number" and it stores the number 7.
 <h4>Creating a variable in C</h4>
 
 <p>
-To create a variable in C, you will need to do one of:
+To create a variable in C, you will need to this:
 </p>
 
 <pre>
-    data-type variable-name = value;
-    data-type variable-name;
+    <i>data-type</i> <i>variable-name</i> [= <i>value</i>]
 </pre>
 
 
 <p>
-The first will create a variable named <code>variable-name</code> with the type <code>data-type</code>,
-and assign it the value of <code>value</code>.<br>
-The second will will create a variable named <code>variable-name</code> with the type <code>data-type</code>,
-but will not assign it any value.<br>
-You can also define multiple variables on the same line.
+If you don't give a variable a value immediately, its value is undefined.<br>
+If you do, then it will be set to value
 </p>
 
 <i>example of defining some variables:</i>
@@ -75,16 +71,18 @@ Compile and run this program to see what happens.
 <pre>
 #include &lt;stdio.h&gt;
 
-int main() {
+int main(void) {
     int x;
     printf("%d\n", x);
+
+    return 0;
 }
 </pre>
 
 <p>
 If you run this code, you might notice that it is 0, or it might be any other random number.
-The truth is, I can't predict what it will be. This is called <code>undefined behavior</code> in C.
-What that means is it totally depends on your compiler.<br>
+The truth is, I can't predict what it will be. This is called <b>undefined behavior</b> in C.
+What that means is it totally depends on your compiler and operating system.<br>
 It will most commonly be what data was already at the memory it is given.
 </p>
 
@@ -92,7 +90,7 @@ It will most commonly be what data was already at the memory it is given.
 <p>
 A data type is used to define what data a variable stores. This is used so that
 programmers, as well as the language itself, knows what to do with and use it for.<br>
-There are 3 main types of data in C, <code>integers</code>, <code>floats</code>, and <code>pointers</code>.
+There are 3 main types of data in C, <b>integers</b>, <b>floats</b>, and <b>pointers</b>.
 </p>
 
 <h4>Integers</h4>
@@ -247,56 +245,8 @@ an error or just convert it.
     </tr>
 </table>
 
-<h3 id="printf-formatting">Printf Formatting</h3>
-<p>
-In C, it's not possible for a function to be allowed to take just any type
-and handle it correctly. So there is no <code>print(5)</code> and then <code>print(12.2)</code>.<br>
-To print a variable that isn't a string, the most common approach is to use printf.<br>
-The f in printf stands for format, and formatting is the most powerful part of printf.
-</p>
-
-<i>an example of printing an integer with printf:</i>
-<pre>
-    int x = 5;
-    printf("%d\n", x);
-</pre>
-
-<p>
-<code>printf</code> takes a format string, and format specifiers all start with a %, then some characters
-to define what the format should look like. The format specifiers are optional, as we saw in our hello world program.
-You will provide things like size, type, right-aligned, 0 padding, etc.<br>
-I suggest you look up how to use printf in more detail.
-</p>
-
-<h4>Format Specifiers</h4>
-<table>
-    <tr>
-        <th>%d</th>
-        <th>Integer</th>
-    </tr>
-    <tr>
-        <th>%u</th>
-        <th>Unsigned Integer</th>
-    </tr>
-    <tr>
-        <th>%f</th>
-        <th>Float</th>
-    </tr>
-    <tr>
-        <th>%s</th>
-        <th>String</th>
-    </tr>
-    <tr>
-        <th>%c</th>
-        <th>Character</th>
-    </tr>
-    <tr>
-        <th>%p</th>
-        <th>Pointer</th>
-    </tr>
-</table>
-
 <a href="comments.html">Previous: Comments</a>
 <a href="index.html">Index</a>
+<a href="printf.html">Next: Printf</a>
 </body>
 </html>

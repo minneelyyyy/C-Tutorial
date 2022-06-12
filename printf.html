@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" lang="en">
+<title>C Tutorial: Printf</title>
+</head>
+<body>
+<h1 id="printf">Printf</h1>
+
+<p>
+<code>printf</code> is a standard function in C used to print text to the terminal. A standard function is a function
+that is included with C on all systems. <code>printf</code> comes from <code>stdio.h</code> which stands for
+standard input/output.<br>
+In our hello world program we used <code>printf</code> to write the string "Hello, world!" to the terminal.
+</p>
+
+<i>An example of how to use printf:</i>
+<pre>
+    printf("Hello, world!\n");
+</pre>
+
+<p>
+Remember that <code>printf</code> will not automatically write a newline, you need to add one in yourself.
+</p>
+
+<h3 id="formatting">Formatting</h3>
+
+<p>
+The f in <code>printf</code> stands for <b>formatting</b>. Formatting can be used to print
+variables of any type and size. You do this with a <b>format specifier</b>.<br>
+We have already used <code>printf</code> before to print an int to the screen, we did this with <code>%d</code>.
+There are format specifiers and options for every type.
+</p>
+
+<p>
+A format specifier can be identified by it starting with a percent symbol (%).
+</p>
+
+<i>A format specifier is always of the following form:</i>
+<pre>
+    %[<i>flags</i>][<i>width</i>][.<i>precision</i>][<i>length</i>]<i>specifier</i>
+</pre>
+
+<h3>Specifier</h3>
+<p>
+A specifier is used to specify the type that should be printed, as well as how to print it.
+It is the only mandatory part of a format specifier besides the percent symbol itself.
+</p>
+
+<i>Note: italics represent a specifier added in C99</i>
+<table>
+    <tr>
+        <th>Specifier</th>
+        <th>Type</th>
+    </tr>
+    <tr>
+        <th>d or i</th>
+        <th>signed integer in decimal</th>
+    </tr>
+    <tr>
+        <th>u</th>
+        <th>unsigned integer in decimal</th>
+    </tr>
+    <tr>
+        <th>o</th>
+        <th>integer in octal</th>
+    </tr>
+    <tr>
+        <th>x</th>
+        <th>integer in hexadecimal (lowercase)</th>
+    </tr>
+    <tr>
+        <th>X</th>
+        <th>integer in hexadecimal (uppercase)</th>
+    </tr>
+    <tr>
+        <th>f</th>
+        <th>float in decimal (lowercase)</th>
+    </tr>
+    <tr>
+        <th><i>F</i></th>
+        <th>float in decimal (uppercase)</th>
+    </tr>
+    <tr>
+        <th>e</th>
+        <th>float in scientific notation (lowecase)</th>
+    </tr>
+    <tr>
+        <th>E</th>
+        <th>float in scientific notation (uppercase)</th>
+    </tr>
+    <tr>
+        <th>g</th>
+        <th>float in either decimal or scientific notation (smallest, lowercase)</th>
+    </tr>
+    <tr>
+        <th>G</th>
+        <th>float in either decimal or scientific notation (smallest, uppercase)</th>
+    </tr>
+    <tr>
+        <th><i>a</i></th>
+        <th>float in hexadecimal (lowercase)</th>
+    </tr>
+    <tr>
+        <th><i>A</i></th>
+        <th>float in hexadecimal (uppercase)</th>
+    </tr>
+    <tr>
+        <th>c</th>
+        <th>character</th>
+    </tr>
+    <tr>
+        <th>s</th>
+        <th>string</th>
+    </tr>
+    <tr>
+        <th>p</th>
+        <th>pointer</th>
+    </tr>
+    <tr>
+        <th>n</th>
+        <th>prints nothing, puts the number of characters written so far into its corresponding argument</th>
+    </tr>
+    <tr>
+        <th>%</th>
+        <th>a literal %</th>
+    </tr>
+</table>
+
+<i>Some examples of the above:</i>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    printf("%d\n", 123);
+    printf("%x\n", 123);
+    printf("%f\n", 5.5);
+    printf("%g\n", 123.5);
+    printf("%c\n", 'a');
+    printf("%s\n", "Hello!");
+
+    return 0;
+}
+</pre>
+
+<h3>Length</h3>
+<p>
+Length is used to specify the size of a variable.
+</p>
+
+<i>table for int types</i>
+<table>
+    <tr>
+        <th>Specifier</th>
+        <th>Type</th>
+    </tr>
+    <tr>
+        <th><i>hh</i></th>
+        <th><code>char</code></th>
+    </tr>
+    <tr>
+        <th>h</th>
+        <th><code>short</code></th>
+    </tr>
+    <tr>
+        <th>(none)</th>
+        <th><code>int</code></th>
+    </tr>
+    <tr>
+        <th>l</th>
+        <th><code>long</code></th>
+    </tr>
+</table>
+
+<i>table for float types</i>
+<table>
+    <tr>
+        <th>Specifier</th>
+        <th>Type</th>
+    </tr>
+    <tr>
+        <th>(none)</th>
+        <th><code>double</code></th>
+    </tr>
+    <tr>
+        <th>L</th>
+        <th><code>long double</code></th>
+    </tr>
+</table>
+
+<i>some examples of using length:</i>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    short x = 5;
+    long double n = 500.12;
+
+    printf("%ld\n", x);
+    printf("Lf\n", n);
+
+    return 0;
+}
+</pre>
+
+<a href="variables.html">Previous: Variables</a>
+<a href="index.html">Index</a>
+</body>
+</html>
