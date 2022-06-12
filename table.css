@@ -1,19 +1,11 @@
 
 table {
-    border: 1px solid;
-    padding: 0px;
-    border-spacing: 0px;
+    border: thin solid;
 }
 
 th {
-    border: 1px solid;
-    margin: 0px;
-    padding: 2px;
-}
-
-tr {
-    margin: 0px;
-    padding: 2px;
+    border: thin solid;
+    padding: 4px;
 }
 
 tr:nth-child(even) {
